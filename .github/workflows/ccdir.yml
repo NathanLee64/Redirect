@@ -47,7 +47,7 @@ jobs:
     - name: Commit files  # transfer the new html files back into the repository
       run: |
         git config --global user.name 'NathanLee64'
-        git config --global user.email 'nathanlee64@users.noreply.github.com' 
+        git config --global user.email 'NathanLee64@users.noreply.github.com' 
         git add ./c
         cd c
         git add ./${{ github.event.inputs.id }}

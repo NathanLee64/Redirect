@@ -55,3 +55,6 @@ jobs:
         echo "<meta http-equiv="refresh" content="0; url='${{ github.event.inputs.url }}'" />" > index.html
         git commit -m "Updating the repository GitHub html pages in the docs folder"
         git push
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.PAT }}

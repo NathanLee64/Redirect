@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      inputid:
+      id:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'ID of Redirect'
         # Default value if no value is explicitly provided
@@ -32,8 +32,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: Create Redirect
     - run: |
-        echo "Creating Redirect ID: ${{ github.event.inputs.inputid }}"
-        mkdir ${{ github.event.inputs.inputid }}
+        echo "Creating Redirect ID: ${{ github.event.inputs.id }}"
+        mkdir ${{ github.event.inputs.id }}
         echo "Creating Redirect URL: ${{ github.event.inputs.url }}"
         touch index.html
         echo "<meta http-equiv="refresh" content="0; url='${{ github.event.inputs.url }}'" />" > index.html

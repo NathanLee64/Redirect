@@ -43,9 +43,12 @@ jobs:
         touch index.html
         echo "<meta http-equiv="refresh" content="0; url='${{ github.event.inputs.url }}'" />" > index.html
         echo "Finished Creating New Redirect!"
+      #git config --local user.name  ${{ github.actor }}
     - name: Commit files  # transfer the new html files back into the repository
       run: |
-        git config --local user.name  ${{ github.actor }}
+        git config --local user.name actions-user
+        git config --local user.email "actions@github.com" 
+        git fetch
         git add ./c
         git commit -m "Updating the repository GitHub html pages in the docs folder"
         git push -f origin main

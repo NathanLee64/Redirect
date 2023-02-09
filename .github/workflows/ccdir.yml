@@ -31,7 +31,7 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Create Redirect
-    - run: |
+      run: |
         echo "Creating Redirect ID: ${{ github.event.inputs.id }}"
         mkdir ${{ github.event.inputs.id }}
         echo "Creating Redirect URL: ${{ github.event.inputs.url }}"

@@ -17,7 +17,7 @@ on:
         required: true
       url:
         description: 'URL of Redirect'
-        default: 'URL'
+        default: 'https://'
         required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -42,3 +42,4 @@ jobs:
         touch index.html
         echo "<meta http-equiv="refresh" content="0; url='${{ github.event.inputs.url }}'" />" > index.html
         echo "Finished Creating New Redirect!"
+        ls -1

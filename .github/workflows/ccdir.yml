@@ -30,7 +30,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
+    - name: Create Directories
+      run: mkdir c/${{ github.event.inputs.id }}
     - name: Create Redirect
+      working-directory: ./c/${{ github.event.inputs.id }}
       run: |
         echo "Creating Redirect ID: ${{ github.event.inputs.id }}"
         mkdir ${{ github.event.inputs.id }}

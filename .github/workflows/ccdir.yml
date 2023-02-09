@@ -31,7 +31,10 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Create Directories
-      run: mkdir c/${{ github.event.inputs.id }}
+      run: mkdir c
+    - name: Create ID Directory
+      working-directory: ./c
+      run: mkdir ${{ github.event.inputs.id }}
     - name: Create Redirect
       working-directory: ./c/${{ github.event.inputs.id }}
       run: |
